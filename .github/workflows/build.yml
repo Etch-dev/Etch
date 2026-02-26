@@ -28,6 +28,7 @@ jobs:
       - name: Build
         run: | 
           cd etch
+          godot --headless --import
           godot --headless -v --export-release "Windows Desktop" ../build/${EXPORT_NAME}_${VERSION}_Windows/${EXPORT_NAME}_${VERSION}.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
@@ -52,6 +53,7 @@ jobs:
       - name: Build
         run: | 
           cd etch
+          godot --headless --import
           godot --headless -v --export-release "Linux" ../build/${EXPORT_NAME}_${VERSION}_Linux/${EXPORT_NAME}_${VERSION}.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
@@ -76,6 +78,7 @@ jobs:
       - name: Build
         run: | 
           cd etch
+          godot --headless --import
           godot --headless -v --export-release "macOS" ../build/${EXPORT_NAME}_${VERSION}_Mac/${EXPORT_NAME}_${VERSION}.zip
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
