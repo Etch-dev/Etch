@@ -1,0 +1,122 @@
+LANGUAGE_NAME Русский
+
+# -----------------------------------------------------------------------------
+# Menu strings
+# -----------------------------------------------------------------------------
+
+MENU_OPEN           Open... # TODO
+MENU_SAVE           Сохранить
+MENU_SAVE_AS        Сохранить как...
+MENU_SETTINGS       Настройки
+MENU_MANUAL         Руководство
+MENU_BUG_TRACKER    Баг трекер
+MENU_ABOUT          О Etch
+MENU_EXPORT         Экспортировать...
+MENU_QUIT           Выход
+
+# -----------------------------------------------------------------------------
+# Toolbar
+# -----------------------------------------------------------------------------
+TOOLBAR_TOOLTIP_NEW_FILE        Создать новый файл
+TOOLBAR_TOOLTIP_OPEN_FILE       Открыть файл
+TOOLBAR_TOOLTIP_SAVE_FILE       Сохранить файл
+TOOLBAR_TOOLTIP_UNDO            Отменить действие
+TOOLBAR_TOOLTIP_REDO            Повторить действие
+TOOLBAR_TOOLTIP_BRUSH_TOOL      Кисть
+TOOLBAR_TOOLTIP_RECTANGLE_TOOL  Rectangle Tool 									    # TODO
+TOOLBAR_TOOLTIP_LINE_TOOL       Линия
+TOOLBAR_TOOLTIP_ERASER_TOOL     Стерка
+TOOLBAR_TOOLTIP_SELECT_TOOL     Выделить
+TOOLBAR_TOOLTIP_BRUSH_SIZE      Размер кисти
+TOOLBAR_TOOLTIP_CANVAS_COLOR    Цвет холста
+
+# -----------------------------------------------------------------------------
+# Color Palette Picker
+# -----------------------------------------------------------------------------
+COLOR_PALETTE_PICKER_HINT_NEW        Create new color palette						# TODO
+COLOR_PALETTE_PICKER_HINT_EDIT       Edit the current color palette  				# TODO
+COLOR_PALETTE_PICKER_HINT_DUPLICATE  Duplicate the current color palette 			# TODO
+COLOR_PALETTE_PICKER_HINT_DELETE     Delete the current color palette permanently 	# TODO
+
+# -----------------------------------------------------------------------------
+# Statusbar strings
+# -----------------------------------------------------------------------------
+
+STATUSBAR_POSITION              Позиция
+STATUSBAR_ZOOM                  Zoom
+STATUSBAR_PRESSURE              Давление
+STATUSBAR_FPS                   FPS
+STATUSBAR_STROKES               Штрихи
+STATUSBAR_POINTS                Количество точек
+
+# -----------------------------------------------------------------------------
+# Settings strings
+# -----------------------------------------------------------------------------
+
+SETTINGS_TITLE                  Настройки
+SETTINGS_GENERAL                Общее
+SETTINGS_APPEARANCE             Внешний вид
+SETTINGS_RENDERING              Рендеринг
+SETTINGS_PRESSURE_SENSITIVITY   Pressure Sensitivity # TODO
+SETTINGS_BRUSH_SIZE             Размер кисти по умолчанию
+SETTINGS_CANVAS_COLOR           Цвет кисти
+SETTINGS_PROJECT_FOLDER         Папка проекта по умолчанию
+SETTINGS_LANGUAGE               Язык
+SETTINGS_TABLET_DRIVER          Tablet Driver
+SETTINGS_THEME                  Тема
+SETTINGS_FPS_FOREGROUND         Foreground Fps 										# TODO
+SETTINGS_FPS_BACKGROUND         Background Fps 										# TODO
+SETTINGS_BRUSH_CAPS             Brush Rounding Mode 								# TODO
+SETTINGS_BRUSH_CAPS_FLAT        Flat 												# TODO
+SETTINGS_BRUSH_CAPS_ROUND       Round 												# TODO
+SETTINGS_RESTART_NOTICE  		Restart required to apply the new settings 			# TODO
+
+# -----------------------------------------------------------------------------
+# About dialog strings
+# -----------------------------------------------------------------------------
+
+ABOUT_DIALOG_TITLE              О Etch
+ABOUT_DIALOG_COPYRIGHT          © 2026 Mahan Khalili и контрибютеры
+ABOUT_DIALOG_LICSENSE           Etch находится под лицензией:
+ABOUT_DIALOG_BASED_ON           Etch основан на:
+ABOUT_DIALOG_EASTEREGG          Easteregg character: 								# TODO
+
+# -----------------------------------------------------------------------------
+# Unsaved changes dialog
+# -----------------------------------------------------------------------------
+
+UNSAVED_CHANGES_DIALOG_TITLE    Warning # TODO
+UNSAVED_CHANGES_DIALOG_TEXT     Вы хотите сохранить изменения перед закрытием файла?
+
+# -----------------------------------------------------------------------------
+# New palette dialog
+# -----------------------------------------------------------------------------
+NEW_PALETTE_DIALOG_CREATE_TITLE 		New Palette  								# TODO
+NEW_PALETTE_DIALOG_DUPLICATE_TITLE 		Duplicate Palette 							# TODO
+NEW_PALETTE_DIALOG_PLACEHOLDER 			Palette name  								# TODO
+
+# -----------------------------------------------------------------------------
+# Delete palette dialog
+# -----------------------------------------------------------------------------
+DELETE_PALETTE_DIALOG_TITLE 			Delete palette 									# TODO
+DELETE_PALETTE_DIALOG_TEXT 				Are you sure you want to permanently delete:    # TODO
+
+# -----------------------------------------------------------------------------
+# Edit palette dialog
+# -----------------------------------------------------------------------------
+EDIT_PALETTE_DIALOG_TITLE 		Edit Palette 										# TODO
+
+# -----------------------------------------------------------------------------
+# Error/Alert messages
+# -----------------------------------------------------------------------------
+ALERT_EDITING_BUILTIN_PALETTE       Editing built-in palettes is not possible. If you want to customize this palette you can make a copy and edit that instead. # TODO
+ALERT_DELETING_BUILTIN_PALETTE      Deleting built-in palettes is not possible. # TODO
+
+# -----------------------------------------------------------------------------
+# Generic strings
+# -----------------------------------------------------------------------------
+
+SAVE            Сохранить
+DISCARD         Отказаться
+CANCEL          Отмена
+DELETE          Delete 			# TODO

@@ -7,79 +7,79 @@ on:
     branches: [ main ]
 
 env:
-  GODOT_VERSION: 4.3
-  EXPORT_NAME: Lorien
-  LORIEN_VERSION: v0.7.0-dev
+  GODOT_VERSION: 4.6
+  EXPORT_NAME: Etch
+  VERSION: v0.1.0-dev1
 
 jobs:
   windows-export:
     name: Windows Export
     runs-on: ubuntu-latest
     container:
-      image: docker://barichello/godot-ci:4.3
+      image: docker://barichello/godot-ci:4.6
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup
         run: |
-          mkdir -v -p build/${EXPORT_NAME}_${LORIEN_VERSION}_Windows
+          mkdir -v -p build/${EXPORT_NAME}_${VERSION}_Windows
           mkdir -v -p ~/.local/share/godot/export_templates
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: | 
           cd lorien
-          godot --headless -v --export-release "Windows Desktop" ../build/${EXPORT_NAME}_${LORIEN_VERSION}_Windows/${EXPORT_NAME}_${LORIEN_VERSION}.exe
+          godot --headless -v --export-release "Windows Desktop" ../build/${EXPORT_NAME}_${VERSION}_Windows/${EXPORT_NAME}_${VERSION}.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Lorien Windows
-          path: build/${{ env.EXPORT_NAME }}_${{ env.LORIEN_VERSION }}_Windows
+          path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Windows
           retention-days: 14
 
   linux-export:
     name: Linux Export
     runs-on: ubuntu-latest
     container:
-      image: docker://barichello/godot-ci:4.3
+      image: docker://barichello/godot-ci:4.6
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup
         run: |
-          mkdir -v -p build/${EXPORT_NAME}_${LORIEN_VERSION}_Linux
+          mkdir -v -p build/${EXPORT_NAME}_${VERSION}_Linux
           mkdir -v -p ~/.local/share/godot/export_templates
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: | 
           cd lorien
-          godot --headless -v --export-release "Linux" ../build/${EXPORT_NAME}_${LORIEN_VERSION}_Linux/${EXPORT_NAME}_${LORIEN_VERSION}.x86_64
+          godot --headless -v --export-release "Linux" ../build/${EXPORT_NAME}_${VERSION}_Linux/${EXPORT_NAME}_${VERSION}.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Lorien Linux
-          path: build/${{ env.EXPORT_NAME }}_${{ env.LORIEN_VERSION }}_Linux
+          path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Linux
           retention-days: 14
 
   mac-export:
     name: Mac Export
     runs-on: ubuntu-latest
     container:
-      image: docker://barichello/godot-ci:4.3
+      image: docker://barichello/godot-ci:4.6
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup
         run: |
-          mkdir -v -p build/${EXPORT_NAME}_${LORIEN_VERSION}_Mac
+          mkdir -v -p build/${EXPORT_NAME}_${VERSION}_Mac
           mkdir -v -p ~/.local/share/godot/export_templates
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: | 
           cd lorien
-          godot --headless -v --export-release "macOS" ../build/${EXPORT_NAME}_${LORIEN_VERSION}_Mac/${EXPORT_NAME}_${LORIEN_VERSION}.zip
+          godot --headless -v --export-release "macOS" ../build/${EXPORT_NAME}_${VERSION}_Mac/${EXPORT_NAME}_${VERSION}.zip
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Lorien Mac
-          path: build/${{ env.EXPORT_NAME }}_${{ env.LORIEN_VERSION }}_Mac
+          path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Mac
           retention-days: 14

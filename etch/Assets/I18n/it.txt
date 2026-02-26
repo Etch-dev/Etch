@@ -1,0 +1,162 @@
+LANGUAGE_NAME Italiano
+
+# -----------------------------------------------------------------------------
+# Menu
+# -----------------------------------------------------------------------------
+
+MENU_OPEN           Apri...
+MENU_SAVE           Salva
+MENU_SAVE_AS        Salva come...
+MENU_SETTINGS       Impostazioni
+MENU_MANUAL         Manuale
+MENU_BUG_TRACKER    Monitoraggio dei bug
+MENU_ABOUT          Informazioni
+MENU_EXPORT         Esporta...
+MENU_QUIT           Esci
+
+# -----------------------------------------------------------------------------
+# Toolbar
+# -----------------------------------------------------------------------------
+TOOLBAR_TOOLTIP_NEW_FILE        Crea nuovo file
+TOOLBAR_TOOLTIP_OPEN_FILE       Apri File
+TOOLBAR_TOOLTIP_SAVE_FILE       Salva File
+TOOLBAR_TOOLTIP_UNDO            Annulla Azione
+TOOLBAR_TOOLTIP_REDO            Ripeti Azione
+TOOLBAR_TOOLTIP_BRUSH_TOOL      Strumento Pennello
+TOOLBAR_TOOLTIP_RECTANGLE_TOOL  Strumento Rettangolo
+TOOLBAR_TOOLTIP_LINE_TOOL       Strumento Linea
+TOOLBAR_TOOLTIP_ERASER_TOOL     Gomma per cancellare
+TOOLBAR_TOOLTIP_SELECT_TOOL     Seleziona strumento
+TOOLBAR_TOOLTIP_BRUSH_COLOR     Colore Pennello
+TOOLBAR_TOOLTIP_BRUSH_SIZE      Dimensione del Pennello
+TOOLBAR_FULLSCREEN_TOGGLE       Commuta la modalità a schermo intero
+
+# -----------------------------------------------------------------------------
+# Color Palette Picker
+# -----------------------------------------------------------------------------
+COLOR_PALETTE_PICKER_HINT_NEW        Crea una nuova tavolozza di colori
+COLOR_PALETTE_PICKER_HINT_EDIT       Modifica la tavolozza dei colori corrente
+COLOR_PALETTE_PICKER_HINT_DUPLICATE  Duplica la tavolozza dei colori corrente
+COLOR_PALETTE_PICKER_HINT_DELETE     Elimina la tavolozza dei colori corrente in modo permanente
+
+# -----------------------------------------------------------------------------
+# Statusbar strings
+# -----------------------------------------------------------------------------
+
+STATUSBAR_POSITION              Posizione
+STATUSBAR_ZOOM                  Zoom
+STATUSBAR_PRESSURE              Pressione
+STATUSBAR_FPS                   FPS
+STATUSBAR_STROKES               Tratti
+STATUSBAR_POINTS                Punti
+
+# -----------------------------------------------------------------------------
+# Settings strings
+# -----------------------------------------------------------------------------
+
+SETTINGS_TITLE                  Impostazioni
+SETTINGS_GENERAL                Generale
+SETTINGS_APPEARANCE             Aspetto
+SETTINGS_RENDERING              Rendering
+SETTINGS_PRESSURE_SENSITIVITY   Sensibilità alla pressione
+SETTINGS_BRUSH_SIZE             Dimensione Pennello Predefinita
+SETTINGS_PROJECT_FOLDER         Cartella di Progetto Predefinita
+SETTINGS_LANGUAGE               Lingua
+SETTINGS_TABLET_DRIVER          Driver del tablet
+SETTINGS_THEME                  Tema
+SETTINGS_FPS_FOREGROUND         Fps in primo piano
+SETTINGS_FPS_BACKGROUND         Fps sullo sfondo
+SETTINGS_CANVAS_COLOR           Colore della Tela
+SETTINGS_BRUSH_CAPS             Modalità arrotondamento pennello
+SETTINGS_BRUSH_CAPS_FLAT        Piatto
+SETTINGS_BRUSH_CAPS_ROUND       Rotondo
+SETTINGS_RESTART_NOTICE  		È necessario riavviare per applicare le nuove impostazioni
+
+# -----------------------------------------------------------------------------
+# About dialog strings
+# -----------------------------------------------------------------------------
+
+ABOUT_DIALOG_TITLE              Informazioni
+ABOUT_DIALOG_COPYRIGHT          © 2026 Mahan Khalili & contributori
+ABOUT_DIALOG_LICSENSE           Etch è concesso in licenza sotto:
+ABOUT_DIALOG_BASED_ON           Etch si basa su:
+ABOUT_DIALOG_EASTEREGG          Carattere Easteregg:
+
+# -----------------------------------------------------------------------------
+# Unsaved changes dialog
+# -----------------------------------------------------------------------------
+
+UNSAVED_CHANGES_DIALOG_TITLE    Attenzione # TODO
+UNSAVED_CHANGES_DIALOG_TEXT     Vuoi salvare le modifiche prima di chiudere il file?
+
+# -----------------------------------------------------------------------------
+# New palette dialog
+# -----------------------------------------------------------------------------
+NEW_PALETTE_DIALOG_CREATE_TITLE 		Nuova tavolozza
+NEW_PALETTE_DIALOG_DUPLICATE_TITLE 		Tavolozza duplicata
+NEW_PALETTE_DIALOG_PLACEHOLDER 			Nome della tavolozza
+
+# -----------------------------------------------------------------------------
+# Delete palette dialog
+# -----------------------------------------------------------------------------
+DELETE_PALETTE_DIALOG_TITLE 			Elimina tavolozza
+DELETE_PALETTE_DIALOG_TEXT 				Sei sicuro di voler eliminare definitivamente:
+
+# -----------------------------------------------------------------------------
+# Edit palette dialog
+# -----------------------------------------------------------------------------
+EDIT_PALETTE_DIALOG_TITLE 		    Modifica tavolozza
+
+# -----------------------------------------------------------------------------
+# Error/Alert messages
+# -----------------------------------------------------------------------------
+ALERT_EDITING_BUILTIN_PALETTE       Non è possibile modificare le tavolozze integrate. Se desideri personalizzare questa tavolozza, puoi crearne una copia e modificarla.
+ALERT_DELETING_BUILTIN_PALETTE      Non è possibile eliminare le tavolozze integrate.
+
+# -----------------------------------------------------------------------------
+# Generic strings
+# -----------------------------------------------------------------------------
+
+SAVE            Salva
+DISCARD         Abbandona
+CANCEL          Cancella
+DELETE          Elimina
+
+#----------------------------------------------------------------------------
+# Action names
+#----------------------------------------------------------------------------
+
+ACTION_shortcut_save_project        Salva il progetto
+ACTION_shortcut_new_project         Nuovo progetto
+ACTION_shortcut_open_project        Apri il progetto
+ACTION_shortcut_quit                Esci
+ACTION_shortcut_undo                Torna indietro
+ACTION_shortcut_redo                Ripeti azione
+ACTION_shortcut_brush_tool          Strumento Pennello
+ACTION_shortcut_line_tool           Strumento Linea
+ACTION_shortcut_eraser_tool         Strumento Gomma
+ACTION_shortcut_select_tool         Seleziona Strumento
+ACTION_shortcut_rectangle_tool      Strumento Rettangolo
+ACTION_shortcut_circle_tool         Strumento Cerchio
+ACTION_shortcut_export_project      Esporta progetto
+ACTION_deselect_all_strokes         Deseleziona tutti i tratti
+ACTION_delete_selected_strokes      Elimina i tratti selezionati
+ACTION_copy_strokes                 Copia i tratti
+ACTION_paste_strokes                Incolla i tratti
+ACTION_duplicate_strokes            Duplica i tratti
+ACTION_toggle_zen_mode              Attiva la modalità Zen
+ACTION_toggle_player                Attiva Easteregg
+ACTION_toggle_fullscreen            Schermo intero
+
+#---------------------------------------------------------------------------
+# Keybindings dialog messages
+#---------------------------------------------------------------------------
+
+#Bind key dialog
+
+KEYBINDING_DIALOG_BIND_WINDOW_NAME Assegna scorciatoia
+KEYBINDING_DIALOG_BIND_ACTION      Scorciatoia: {action}
+
+#Rebin already bound key dialog
+KEYBINDING_DIALOG_REBIND_WINDOW_NAME Riassegnare la scorciatoia?
+KEYBINDING_DIALOG_REBIND_MESSAGE 'event' è già assegnata to {action}.\n\nSei sicuro di volerla riassegnare?

@@ -1,0 +1,153 @@
+LANGUAGE_NAME Deutsch
+
+# --------------------------------------------------------------------------------
+# Menu
+# --------------------------------------------------------------------------------
+
+MENU_OPEN           Öffnen...
+MENU_SAVE           Speichern
+MENU_SAVE_AS        Speichern als...
+MENU_SETTINGS       Einstellungen
+MENU_MANUAL         Benutzeranleitung
+MENU_BUG_TRACKER    Bug Tracker
+MENU_ABOUT          Über
+MENU_EXPORT         Exportieren...
+MENU_QUIT           Schließen
+
+# -----------------------------------------------------------------------------
+# Toolbar
+# -----------------------------------------------------------------------------
+TOOLBAR_TOOLTIP_NEW_FILE        Neue Datei anlegen
+TOOLBAR_TOOLTIP_OPEN_FILE       Datei öffnen
+TOOLBAR_TOOLTIP_SAVE_FILE       Datei speichern
+TOOLBAR_TOOLTIP_UNDO            Undo Action
+TOOLBAR_TOOLTIP_REDO            Redo Action
+TOOLBAR_TOOLTIP_BRUSH_TOOL      Pinsel Werkzeug
+TOOLBAR_TOOLTIP_RECTANGLE_TOOL  Rechteck Werkzeug
+TOOLBAR_TOOLTIP_LINE_TOOL       Linien Werkzeug
+TOOLBAR_TOOLTIP_ERASER_TOOL     Radierer
+TOOLBAR_TOOLTIP_SELECT_TOOL     Auswahl Werkzeug
+TOOLBAR_TOOLTIP_BRUSH_COLOR     Pinsel Farbe
+TOOLBAR_TOOLTIP_BRUSH_SIZE      Pinsel Größe
+TOOLBAR_TOOLTIP_CANVAS_COLOR    Canvas Farbe
+
+# -----------------------------------------------------------------------------
+# Color Palette Picker
+# -----------------------------------------------------------------------------
+COLOR_PALETTE_PICKER_HINT_EDIT       Aktuelle Farbpalette editieren
+COLOR_PALETTE_PICKER_HINT_NEW        Neue Farbpalette anlegen
+COLOR_PALETTE_PICKER_HINT_DUPLICATE  Aktuelle Farbpalette duplizieren
+COLOR_PALETTE_PICKER_HINT_DELETE     Aktuelle Farbpalette permanent löschen
+
+
+# -----------------------------------------------------------------------------
+# Statusbar
+# -----------------------------------------------------------------------------
+
+STATUSBAR_POSITION              Position
+STATUSBAR_ZOOM                  Zoom
+STATUSBAR_PRESSURE              Druck
+STATUSBAR_FPS                   FPS
+STATUSBAR_STROKES               Striche
+STATUSBAR_POINTS                Punkte
+
+# -----------------------------------------------------------------------------
+# Settings
+# -----------------------------------------------------------------------------
+
+SETTINGS_TITLE                  Einstellungen
+SETTINGS_GENERAL                Generell
+SETTINGS_APPEARANCE             Ansicht
+SETTINGS_RENDERING              Rendering
+SETTINGS_PRESSURE_SENSITIVITY   Druckempfindlichkeit
+SETTINGS_BRUSH_SIZE             Default Pinsel Größe
+SETTINGS_PROJECT_FOLDER         Default Project Ordner
+SETTINGS_LANGUAGE               Sprache
+SETTINGS_TABLET_DRIVER          Tablet Treiber
+SETTINGS_THEME                  Theme
+SETTINGS_GRID_SIZE              Grid Größe
+SETTINGS_GRID_PATTERN           Grid Pattern
+SETTINGS_CANVAS_COLOR           Canvas Farbe
+SETTINGS_FPS_FOREGROUND         Vordergrund Fps
+SETTINGS_FPS_BACKGROUND         Hintergrund Fps
+SETTINGS_BRUSH_CAPS	            Pinsel Abrundung
+SETTINGS_BRUSH_CAPS_FLAT        Flach
+SETTINGS_BRUSH_CAPS_ROUND       Abgerundet
+SETTINGS_RESTART_NOTICE  		Ein Neustart ist notwendig um die Einstellungen zu übernehmen
+
+# -----------------------------------------------------------------------------
+# About dialog
+# -----------------------------------------------------------------------------
+
+ABOUT_DIALOG_TITLE              Über
+ABOUT_DIALOG_COPYRIGHT          © 2026 Mahan Khalili & Mitwirkende
+ABOUT_DIALOG_LICSENSE           Etch ist lizenziert unter:
+ABOUT_DIALOG_BASED_ON           Etch basiert auf:
+ABOUT_DIALOG_EASTEREGG          Easteregg Charakter:
+
+# -----------------------------------------------------------------------------
+# Unsaved changes dialog
+# -----------------------------------------------------------------------------
+
+UNSAVED_CHANGES_DIALOG_TITLE    Warnung
+UNSAVED_CHANGES_DIALOG_TEXT     Willst du deine Änderungen speichern?
+
+# -----------------------------------------------------------------------------
+# New palette dialog
+# -----------------------------------------------------------------------------
+NEW_PALETTE_DIALOG_CREATE_TITLE 		Neue Farbpalette
+NEW_PALETTE_DIALOG_DUPLICATE_TITLE 		Farbpalette duplizieren
+NEW_PALETTE_DIALOG_PLACEHOLDER 			Palette Name
+
+# -----------------------------------------------------------------------------
+# Delete palette dialog
+# -----------------------------------------------------------------------------
+DELETE_PALETTE_DIALOG_TITLE 			Farbpalette löschen
+DELETE_PALETTE_DIALOG_TEXT 				Bist du sicher folgende Farbpalette permanent zu löschen:
+
+# -----------------------------------------------------------------------------
+# Edit palette dialog
+# -----------------------------------------------------------------------------
+EDIT_PALETTE_DIALOG_TITLE 		Palette bearbeiten
+
+# -----------------------------------------------------------------------------
+# Error/Alert messages
+# -----------------------------------------------------------------------------
+ALERT_EDITING_BUILTIN_PALETTE       Built-in Paletten können nicht verändert werden. Um diese Palette zu anzupassen, mache eine Kopie und verändere diese stattdessen.
+ALERT_DELETING_BUILTIN_PALETTE      Built-in Farbpaletten können nicht gelöscht werden.
+
+# -----------------------------------------------------------------------------
+# Generic strings
+# -----------------------------------------------------------------------------
+
+SAVE            Speichern
+DISCARD         Verwerfen
+CANCEL          Abbrechen
+DELETE          Löschen
+
+# -----------------------------------------------------------------------------
+# Action names
+# -----------------------------------------------------------------------------
+
+ACTION_shortcut_save_project        Datei speichern
+ACTION_shortcut_new_project         Neue Datei
+ACTION_shortcut_open_project        Datei öffnen
+ACTION_shortcut_close_project       Datei schließen
+ACTION_shortcut_quit                Schließen
+ACTION_shortcut_undo                Undo
+ACTION_shortcut_redo                Redo
+ACTION_shortcut_brush_tool          Pinsel Werkzeug
+ACTION_shortcut_line_tool           Linien Werkzeug
+ACTION_shortcut_eraser_tool         Radiergummi
+ACTION_shortcut_select_tool         Auswahl Werkzeug
+ACTION_shortcut_rectangle_tool      Rechteck Werkzeug
+ACTION_shortcut_circle_tool         Kreis Werkzeug
+ACTION_shortcut_export_project      Datei exportieren
+ACTION_deselect_all_strokes         Aktuelle Auswahl entfernen
+ACTION_delete_selected_strokes      Aktuelle Auswahl löschen
+ACTION_copy_strokes                 Kopieren
+ACTION_paste_strokes                Einfügen
+ACTION_duplicate_strokes            Auswahl duplizieren
+ACTION_toggle_zen_mode              Toggle Zen Mode
+ACTION_toggle_player                Toggle Easteregg
+ACTION_toggle_fullscreen            Vollbildmodus
