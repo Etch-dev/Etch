@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c41oe1lt7u6r8"]
+[gd_scene format=3 uid="uid://c41oe1lt7u6r8"]
 
 [ext_resource type="Theme" uid="uid://u5qnpgxqykiv" path="res://UI/Themes/dark/theme.tres" id="1"]
-[ext_resource type="Script" path="res://UI/MainMenu.gd" id="2"]
+[ext_resource type="Script" uid="uid://bl0jjbmeufd86" path="res://UI/MainMenu.gd" id="2"]
 
-[node name="MainMenu" type="PopupMenu"]
+[node name="MainMenu" type="PopupMenu" unique_id=291122055]
+oversampling_override = 1.0
 visible = true
 unfocusable = true
 theme = ExtResource("1")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgs8d5y8yrwl0"]
+[gd_scene format=3 uid="uid://cgs8d5y8yrwl0"]
 
 [ext_resource type="Theme" uid="uid://u5qnpgxqykiv" path="res://UI/Themes/dark/theme.tres" id="1_n5v21"]
-[ext_resource type="Script" path="res://UI/Dialogs/SettingsDialog.gd" id="2"]
+[ext_resource type="Script" uid="uid://c3kdn06u2pql7" path="res://UI/Dialogs/SettingsDialog.gd" id="2"]
 
 [sub_resource type="StyleBoxEmpty" id="1"]
 
@@ -9,7 +9,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxxpi"]
 
-[node name="SettingsDialog" type="PanelContainer"]
+[node name="SettingsDialog" type="PanelContainer" unique_id=1756017574]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,66 +18,66 @@ grow_vertical = 2
 theme = ExtResource("1_n5v21")
 script = ExtResource("2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1157797300]
 layout_mode = 2
 
-[node name="Tabs" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Tabs" type="HBoxContainer" parent="VBoxContainer" unique_id=1188653029]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 8
 
-[node name="GeneralTab" type="Button" parent="VBoxContainer/Tabs"]
+[node name="GeneralTab" type="Button" parent="VBoxContainer/Tabs" unique_id=1623248581]
 unique_name_in_owner = true
 layout_mode = 2
 text = "SETTINGS_GENERAL"
 
-[node name="AppearanceTab" type="Button" parent="VBoxContainer/Tabs"]
+[node name="AppearanceTab" type="Button" parent="VBoxContainer/Tabs" unique_id=976376255]
 unique_name_in_owner = true
 layout_mode = 2
 text = "SETTINGS_APPEARANCE"
 
-[node name="RenderingTab" type="Button" parent="VBoxContainer/Tabs"]
+[node name="RenderingTab" type="Button" parent="VBoxContainer/Tabs" unique_id=186832649]
 unique_name_in_owner = true
 layout_mode = 2
 text = "SETTINGS_RENDERING"
 
-[node name="KeybindingsTab" type="Button" parent="VBoxContainer/Tabs"]
+[node name="KeybindingsTab" type="Button" parent="VBoxContainer/Tabs" unique_id=648786017]
 unique_name_in_owner = true
 layout_mode = 2
 text = "SETTINGS_KEYBINDINGS"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1532650693]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=907236228]
 layout_mode = 2
 
-[node name="GeneralContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="GeneralContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1485116866]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer" unique_id=248777236]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=78054816]
 layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_styles/separator = SubResource("1")
 
-[node name="PressureSensitivity" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="PressureSensitivity" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=410119547]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/PressureSensitivity"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/PressureSensitivity" unique_id=1996561629]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_PRESSURE_SENSITIVITY"
 
-[node name="PressureSensitivity" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/PressureSensitivity"]
+[node name="PressureSensitivity" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/PressureSensitivity" unique_id=2065175146]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -87,32 +87,32 @@ max_value = 2.0
 step = 0.01
 value = 1.0
 
-[node name="ConstantPressure" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="ConstantPressure" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=1895322997]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/ConstantPressure"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/ConstantPressure" unique_id=294792498]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_CONSTANT_PRESSURE"
 
-[node name="ConstantPressure" type="CheckBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/ConstantPressure"]
+[node name="ConstantPressure" type="CheckBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/ConstantPressure" unique_id=766668724]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DefaultBrushSize" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="DefaultBrushSize" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=983768394]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultBrushSize"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultBrushSize" unique_id=60282160]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_BRUSH_SIZE"
 
-[node name="DefaultBrushSize" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultBrushSize"]
+[node name="DefaultBrushSize" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultBrushSize" unique_id=1464834442]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -121,17 +121,17 @@ min_value = 1.0
 value = 12.0
 allow_greater = true
 
-[node name="DefaultToolPressure" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="DefaultToolPressure" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=1663309979]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultToolPressure"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultToolPressure" unique_id=2043183141]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_TOOL_PRESSURE"
 
-[node name="DefaultToolPressure" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultToolPressure"]
+[node name="DefaultToolPressure" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultToolPressure" unique_id=1214349428]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -140,17 +140,17 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="StabilizerStrength" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="StabilizerStrength" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=873917211]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/StabilizerStrength"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/StabilizerStrength" unique_id=1581742770]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_STABILIZER_STRENGTH"
 
-[node name="StabilizerStrength" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/StabilizerStrength"]
+[node name="StabilizerStrength" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/StabilizerStrength" unique_id=223332496]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -159,118 +159,120 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="DefaultProjectDir" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="DefaultProjectDir" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=1740503239]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultProjectDir"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultProjectDir" unique_id=907888794]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_PROJECT_FOLDER"
 
-[node name="DefaultProjectDir" type="LineEdit" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultProjectDir"]
+[node name="DefaultProjectDir" type="LineEdit" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultProjectDir" unique_id=458515656]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 placeholder_text = "e.g. C:/Users/me/Lorien"
 
-[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=1410018420]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="TabletDriver" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="TabletDriver" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=1587696516]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/TabletDriver"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/TabletDriver" unique_id=96227227]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_TABLET_DRIVER"
 
-[node name="TabletDriver" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/TabletDriver"]
+[node name="TabletDriver" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/TabletDriver" unique_id=418473962]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Language" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer"]
+[node name="Language" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer" unique_id=1800683307]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/Language"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/Language" unique_id=590672968]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_LANGUAGE"
 
-[node name="Language" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/Language"]
+[node name="Language" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/Language" unique_id=1118789053]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="AppearanceContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="AppearanceContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=115868442]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer" unique_id=1074409980]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer" unique_id=910385697]
 layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_styles/separator = SubResource("1")
 
-[node name="Theme" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer"]
+[node name="Theme" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer" unique_id=1479103072]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/Theme"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/Theme" unique_id=1251566690]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_THEME"
 
-[node name="Theme" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/Theme"]
+[node name="Theme" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/Theme" unique_id=1126378499]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 item_count = 2
 popup/item_0/text = "SETTINGS_THEME_DARK"
+popup/item_0/id = 0
 popup/item_1/text = "SETTINGS_THEME_LIGHT"
 popup/item_1/id = 1
 
-[node name="UIScale" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer"]
+[node name="UIScale" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer" unique_id=946782438]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale" unique_id=1990465740]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_UI_SCALE"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale" unique_id=1184544092]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="UIScaleOptions" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale/HBoxContainer"]
+[node name="UIScaleOptions" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale/HBoxContainer" unique_id=795782383]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 item_count = 2
 popup/item_0/text = "SETTINGS_UI_SCALE_AUTO"
+popup/item_0/id = 0
 popup/item_1/text = "SETTINGS_UI_SCALE_CUSTOM"
 popup/item_1/id = 1
 
-[node name="UIScale" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale/HBoxContainer"]
+[node name="UIScale" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale/HBoxContainer" unique_id=201120056]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -280,39 +282,40 @@ max_value = 2.5
 step = 0.1
 value = 1.0
 
-[node name="GridPattern" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer"]
+[node name="GridPattern" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer" unique_id=399786202]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridPattern"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridPattern" unique_id=743159209]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_GRID_PATTERN"
 
-[node name="GridPattern" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridPattern"]
+[node name="GridPattern" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridPattern" unique_id=2075397562]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 item_count = 3
 popup/item_0/text = "SETTINGS_GRID_PATTERN_DOTS"
+popup/item_0/id = 0
 popup/item_1/text = "SETTINGS_GRID_PATTERN_LINES"
 popup/item_1/id = 1
 popup/item_2/text = "SETTINGS_GRID_PATTERN_NONE"
 popup/item_2/id = 2
 
-[node name="GridSize" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer"]
+[node name="GridSize" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer" unique_id=1722338166]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridSize"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridSize" unique_id=242750822]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_GRID_SIZE"
 
-[node name="GridSize" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridSize"]
+[node name="GridSize" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridSize" unique_id=146890792]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -322,76 +325,77 @@ max_value = 256.0
 value = 12.0
 allow_greater = true
 
-[node name="CanvasColor" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer"]
+[node name="CanvasColor" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer" unique_id=245498557]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/CanvasColor"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/CanvasColor" unique_id=7682189]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_CANVAS_COLOR"
 
-[node name="CanvasColor" type="ColorPickerButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/CanvasColor"]
+[node name="CanvasColor" type="ColorPickerButton" parent="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/CanvasColor" unique_id=110051016]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("2")
-theme_override_styles/disabled = SubResource("2")
-theme_override_styles/hover = SubResource("2")
-theme_override_styles/pressed = SubResource("2")
 theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("2")
+theme_override_styles/hover = SubResource("2")
+theme_override_styles/disabled = SubResource("2")
+theme_override_styles/focus = SubResource("2")
 flat = true
 color = Color(0.12549, 0.129412, 0.141176, 1)
 edit_alpha = false
 
-[node name="RenderingContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="RenderingContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1624340883]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer" unique_id=1680673870]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer" unique_id=341417630]
 layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_styles/separator = SubResource("1")
 
-[node name="BrushRounding" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer"]
+[node name="BrushRounding" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer" unique_id=969217730]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BrushRounding"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BrushRounding" unique_id=1279285344]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_BRUSH_CAPS"
 
-[node name="BrushRounding" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BrushRounding"]
+[node name="BrushRounding" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BrushRounding" unique_id=1319942507]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 item_count = 2
 popup/item_0/text = "SETTINGS_BRUSH_CAPS_FLAT"
+popup/item_0/id = 0
 popup/item_1/text = "SETTINGS_BRUSH_CAPS_ROUND"
 popup/item_1/id = 1
 
-[node name="ForgroundFramerate" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer"]
+[node name="ForegroundFramerate" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer" unique_id=1617822152]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/ForgroundFramerate"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/ForegroundFramerate" unique_id=828233498]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_FPS_FOREGROUND"
 
-[node name="ForgroundFramerate" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/ForgroundFramerate"]
+[node name="ForegroundFramerate" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/ForegroundFramerate" unique_id=1852267871]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -401,17 +405,17 @@ max_value = 1000.0
 value = 144.0
 allow_greater = true
 
-[node name="BackgroundFramerate" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer"]
+[node name="BackgroundFramerate" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer" unique_id=940928033]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BackgroundFramerate"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BackgroundFramerate" unique_id=1952068474]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SETTINGS_FPS_BACKGROUND"
 
-[node name="BackgroundFramerate" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BackgroundFramerate"]
+[node name="BackgroundFramerate" type="SpinBox" parent="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BackgroundFramerate" unique_id=292926312]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -421,27 +425,45 @@ max_value = 1000.0
 value = 10.0
 allow_greater = true
 
-[node name="KeybindingsContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="KeybindingsContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=498980490]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="KeybindItemList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/KeybindingsContainer"]
+[node name="KeybindItemList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/KeybindingsContainer" unique_id=352661954]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/KeybindingsContainer/KeybindItemList"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/VBoxContainer/KeybindingsContainer/KeybindItemList" unique_id=275103221]
 layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jxxpi")
 
-[node name="RestartLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="RestartLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=960220012]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.470588, 0.470588, 1)
 text = "SETTINGS_RESTART_NOTICE"
 horizontal_alignment = 1
+
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/PressureSensitivity/PressureSensitivity" to="." method="_on_pressure_sensitivity_changed"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/ConstantPressure/ConstantPressure" to="." method="_on_constant_pressure_toggled"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultBrushSize/DefaultBrushSize" to="." method="_on_default_brush_size_changed"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultToolPressure/DefaultToolPressure" to="." method="_on_default_tool_pressure_changed"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/StabilizerStrength/StabilizerStrength" to="." method="_on_stabilizer_strength_changed"]
+[connection signal="text_changed" from="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/DefaultProjectDir/DefaultProjectDir" to="." method="_on_default_project_dir_changed"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/TabletDriver/TabletDriver" to="." method="_on_tablet_driver_selected"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/GeneralContainer/VBoxContainer/Language/Language" to="." method="_on_language_selected"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/Theme/Theme" to="." method="_on_theme_selected"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale/HBoxContainer/UIScaleOptions" to="." method="_on_ui_scale_mode_selected"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/UIScale/HBoxContainer/UIScale" to="." method="_on_ui_scale_changed"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridPattern/GridPattern" to="." method="_on_grid_pattern_selected"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/GridSize/GridSize" to="." method="_on_grid_size_changed"]
+[connection signal="color_changed" from="VBoxContainer/MarginContainer/VBoxContainer/AppearanceContainer/VBoxContainer/CanvasColor/CanvasColor" to="." method="_on_canvas_color_changed"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BrushRounding/BrushRounding" to="." method="_on_brush_rounding_selected"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/ForegroundFramerate/ForegroundFramerate" to="." method="_on_foreground_fps_changed"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer/RenderingContainer/VBoxContainer/BackgroundFramerate/BackgroundFramerate" to="." method="_on_background_fps_changed"]

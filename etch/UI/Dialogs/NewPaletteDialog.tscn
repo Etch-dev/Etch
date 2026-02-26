@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://jow4q8tm6qro"]
+[gd_scene format=3 uid="uid://jow4q8tm6qro"]
 
-[ext_resource type="Script" path="res://UI/Dialogs/NewPaletteDialog.gd" id="2"]
+[ext_resource type="Script" uid="uid://cuk58vraj8i6x" path="res://UI/Dialogs/NewPaletteDialog.gd" id="2"]
 
-[node name="NewPaletteDialog" type="MarginContainer"]
+[node name="NewPaletteDialog" type="MarginContainer" unique_id=1975623605 node_paths=PackedStringArray("_line_edit")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,11 +13,12 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 script = ExtResource("2")
+_line_edit = NodePath("Container/LineEdit")
 
-[node name="Container" type="Control" parent="."]
+[node name="Container" type="Control" parent="." unique_id=1959163400]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=39395814]
 layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -25,18 +26,21 @@ anchor_bottom = 1.0
 offset_top = -25.0
 size_flags_vertical = 0
 
-[node name="SaveButton" type="Button" parent="Container/HBoxContainer"]
+[node name="SaveButton" type="Button" parent="Container/HBoxContainer" unique_id=1098649326]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "SAVE"
 
-[node name="CancelButton" type="Button" parent="Container/HBoxContainer"]
+[node name="CancelButton" type="Button" parent="Container/HBoxContainer" unique_id=2110530946]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "CANCEL"
 
-[node name="LineEdit" type="LineEdit" parent="Container"]
+[node name="LineEdit" type="LineEdit" parent="Container" unique_id=1038685640]
 layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 21.0
 placeholder_text = "NEW_PALETTE_DIALOG_PLACEHOLDER"
+
+[connection signal="pressed" from="Container/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Container/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

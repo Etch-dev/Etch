@@ -1,82 +1,88 @@
-[gd_scene load_steps=17 format=3 uid="uid://c4u5gk5n2aiom"]
+[gd_scene format=3 uid="uid://c4u5gk5n2aiom"]
 
-[ext_resource type="Script" path="res://InfiniteCanvas/InfiniteCanvas.gd" id="1"]
-[ext_resource type="Script" path="res://InfiniteCanvas/PanZoomCamera.gd" id="2"]
+[ext_resource type="Script" uid="uid://dli3ytabmklnw" path="res://InfiniteCanvas/InfiniteCanvas.gd" id="1"]
+[ext_resource type="Script" uid="uid://do644ohsggu4l" path="res://InfiniteCanvas/PanZoomCamera.gd" id="2"]
 [ext_resource type="Curve" uid="uid://bgd7v60kyywsk" path="res://InfiniteCanvas/default_pressure_curve.tres" id="3"]
 [ext_resource type="PackedScene" uid="uid://cf3j2vavqos04" path="res://InfiniteCanvas/Cursor/BrushCursor/BrushCursor.tscn" id="4"]
-[ext_resource type="Script" path="res://InfiniteCanvas/Tools/BrushTool.gd" id="5"]
-[ext_resource type="Script" path="res://InfiniteCanvas/Tools/LineTool.gd" id="6"]
-[ext_resource type="Script" path="res://InfiniteCanvas/Tools/SelectionTool.gd" id="7"]
-[ext_resource type="PackedScene" path="res://InfiniteCanvas/Cursor/SelectionCursor/SelectionCursor.tscn" id="8"]
-[ext_resource type="Script" path="res://InfiniteCanvas/Tools/SelectionRectangle.gd" id="9"]
-[ext_resource type="Shader" path="res://InfiniteCanvas/Tools/selection_rectangle.gdshader" id="10"]
-[ext_resource type="Script" path="res://InfiniteCanvas/Tools/RectangleTool.gd" id="11"]
-[ext_resource type="Script" path="res://InfiniteCanvas/InfiniteCanvasGrid.gd" id="12"]
-[ext_resource type="Script" path="res://InfiniteCanvas/Tools/CircleTool.gd" id="13"]
-[ext_resource type="Script" path="res://InfiniteCanvas/Tools/EraserTool.gd" id="14"]
-[ext_resource type="Script" path="res://InfiniteCanvas/DebugDraw.gd" id="15"]
+[ext_resource type="Script" uid="uid://cx70gub35kg6q" path="res://InfiniteCanvas/Tools/BrushTool.gd" id="5"]
+[ext_resource type="Script" uid="uid://m7xhx3qpm2qd" path="res://InfiniteCanvas/Tools/LineTool.gd" id="6"]
+[ext_resource type="Script" uid="uid://cx3vtsilowwd7" path="res://InfiniteCanvas/Tools/SelectionTool.gd" id="7"]
+[ext_resource type="PackedScene" uid="uid://d3sbmh0yr7no1" path="res://InfiniteCanvas/Cursor/SelectionCursor/SelectionCursor.tscn" id="8"]
+[ext_resource type="Script" uid="uid://ds8pqhrlmprkf" path="res://InfiniteCanvas/Tools/SelectionRectangle.gd" id="9"]
+[ext_resource type="Shader" uid="uid://dbiiv588kte0m" path="res://InfiniteCanvas/Tools/selection_rectangle.gdshader" id="10"]
+[ext_resource type="Script" uid="uid://b853p1heqwwmn" path="res://InfiniteCanvas/Tools/RectangleTool.gd" id="11"]
+[ext_resource type="Script" uid="uid://cm5g5htskq3e3" path="res://InfiniteCanvas/InfiniteCanvasGrid.gd" id="12"]
+[ext_resource type="Script" uid="uid://w62akivtavi4" path="res://InfiniteCanvas/Tools/CircleTool.gd" id="13"]
+[ext_resource type="Script" uid="uid://v0firi1ty0io" path="res://InfiniteCanvas/Tools/EraserTool.gd" id="14"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 shader = ExtResource("10")
-shader_parameter/background_color = null
+shader_parameter/background_color = Vector4(0, 0, 0, 0)
 
-[node name="InfiniteCanvas" type="SubViewportContainer"]
+[node name="InfiniteCanvas" type="SubViewportContainer" unique_id=1482477547 node_paths=PackedStringArray("grid", "_brush_tool", "_rectangle_tool", "_line_tool", "_circle_tool", "_eraser_tool", "_selection_tool", "_strokes_parent", "_camera", "_viewport")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1")
+grid = NodePath("SubViewport/Grid")
+_brush_tool = NodePath("BrushTool")
+_rectangle_tool = NodePath("RectangleTool")
+_line_tool = NodePath("LineTool")
+_circle_tool = NodePath("CircleTool")
+_eraser_tool = NodePath("EraserTool")
+_selection_tool = NodePath("SelectionTool")
+_strokes_parent = NodePath("SubViewport/Strokes")
+_camera = NodePath("SubViewport/Camera2D")
+_viewport = NodePath("SubViewport")
 
-[node name="BrushTool" type="Node" parent="."]
+[node name="BrushTool" type="Node" parent="." unique_id=186120822]
 script = ExtResource("5")
 pressure_curve = ExtResource("3")
 cursor_path = NodePath("../SubViewport/BrushCursor")
 
-[node name="RectangleTool" type="Node" parent="."]
+[node name="RectangleTool" type="Node" parent="." unique_id=221674677]
 script = ExtResource("11")
 pressure_curve = ExtResource("3")
 cursor_path = NodePath("../SubViewport/BrushCursor")
 
-[node name="CircleTool" type="Node" parent="."]
+[node name="CircleTool" type="Node" parent="." unique_id=2134615306]
 script = ExtResource("13")
 pressure_curve = ExtResource("3")
 cursor_path = NodePath("../SubViewport/BrushCursor")
 
-[node name="EraserTool" type="Node" parent="."]
+[node name="EraserTool" type="Node" parent="." unique_id=671936098]
 script = ExtResource("14")
 cursor_path = NodePath("../SubViewport/BrushCursor")
 
-[node name="LineTool" type="Node" parent="."]
+[node name="LineTool" type="Node" parent="." unique_id=1487760274]
 script = ExtResource("6")
 pressure_curve = ExtResource("3")
 cursor_path = NodePath("../SubViewport/BrushCursor")
 
-[node name="SelectionTool" type="Node" parent="."]
+[node name="SelectionTool" type="Node" parent="." unique_id=990633118]
 script = ExtResource("7")
 selection_rectangle_path = NodePath("../SubViewport/SelectionRectangle")
 cursor_path = NodePath("../SubViewport/SelectionCursor")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1939262310]
 handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="SubViewport"]
+[node name="Camera2D" type="Camera2D" parent="SubViewport" unique_id=1310365515]
 anchor_mode = 0
 script = ExtResource("2")
 
-[node name="Grid" type="Node2D" parent="SubViewport"]
+[node name="Grid" type="Node2D" parent="SubViewport" unique_id=1705545630]
 script = ExtResource("12")
 camera_path = NodePath("../Camera2D")
 
-[node name="Strokes" type="Node2D" parent="SubViewport"]
+[node name="Strokes" type="Node2D" parent="SubViewport" unique_id=1918353096]
 
-[node name="DebugDraw" type="Node2D" parent="SubViewport"]
-script = ExtResource("15")
-
-[node name="SelectionRectangle" type="Node2D" parent="SubViewport"]
+[node name="SelectionRectangle" type="Node2D" parent="SubViewport" unique_id=60245169]
 material = SubResource("1")
 script = ExtResource("9")
 
-[node name="BrushCursor" parent="SubViewport" instance=ExtResource("4")]
+[node name="BrushCursor" parent="SubViewport" unique_id=500196476 instance=ExtResource("4")]
 
-[node name="SelectionCursor" parent="SubViewport" instance=ExtResource("8")]
+[node name="SelectionCursor" parent="SubViewport" unique_id=68083165 instance=ExtResource("8")]

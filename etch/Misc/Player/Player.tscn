@@ -106,8 +106,11 @@ height = 98.0
 radius = 30.0
 height = 70.0
 
-[node name="Player" type="CharacterBody2D" unique_id=604199095]
+[node name="Player" type="CharacterBody2D" unique_id=604199095 node_paths=PackedStringArray("_sprite", "_col_shape_normal", "_col_shape_crouching")]
 script = ExtResource("1")
+_sprite = NodePath("AnimatedSprite2D")
+_col_shape_normal = NodePath("CollisionShapeNormal")
+_col_shape_crouching = NodePath("CollisionShapeCrouching")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=896369107]
 sprite_frames = SubResource("3")

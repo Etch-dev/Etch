@@ -1,39 +1,37 @@
 class_name EraserTool
 extends CanvasTool
 
-# -------------------------------------------------------------------------------------------------
-const OVERLAP_THRESHOLD := 0.95
-const BOUNDING_BOX_MARGIN := 20.0
+const OVERLAP_THRESHOLD = 0.95
+const BOUNDING_BOX_MARGIN = 20.0
 
-# -------------------------------------------------------------------------------------------------
 var _last_mouse_position: Vector2
 var _removed_strokes: Array[BrushStroke]
-var _bounding_box_cache := {} # BrushStroke -> Rect2
+var _bounding_box_cache: Dictionary[BrushStroke, Rect2] = {}
 
-# -------------------------------------------------------------------------------------------------
+
 func tool_event(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		_last_mouse_position = _cursor.global_position
-	if event is InputEventMouseButton && !disable_stroke:
+	if event is InputEventMouseButton and not disable_stroke:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				if _bounding_box_cache.is_empty():
 					_update_bounding_boxes()
 				performing_stroke = true
-			elif !event.pressed:
+			else:
 				reset()
 
-# -------------------------------------------------------------------------------------------------
+
 func _process(delta: float) -> void:
 	if performing_stroke:
 		_remove_stroke(_last_mouse_position)
 		_add_undoredo_action_for_erased_strokes()
 
-# ------------------------------------------------------------------------------------------------
+
 func _stroke_intersects_circle(stroke: BrushStroke, circle_position: Vector2) -> bool:
 	# Check if the cursor is inside bounding box; if it's not, there is no way we are intersecting the stroke
 	var bounding_box: Rect2 = _bounding_box_cache[stroke]
-	if !bounding_box.has_point(_last_mouse_position):
+	if not bounding_box.has_point(_last_mouse_position):
 		return false
 	# Check every segment of the brush stroke for an intersection with the curser
 	var eraser_brush_radius := float(_cursor._brush_size) * 0.5
@@ -43,22 +41,22 @@ func _stroke_intersects_circle(stroke: BrushStroke, circle_position: Vector2) ->
 		var radius := segment_radius + eraser_brush_radius
 		var start := stroke.position + stroke.points[i]
 		var end := stroke.position + stroke.points[i+1]
-		
+
 		if Geometry2D.segment_intersects_circle(start, end, circle_position, radius*OVERLAP_THRESHOLD) >= 0:
 			return true
-		
+
 		if Geometry2D.is_point_in_circle(stroke.points[i], circle_position, radius*OVERLAP_THRESHOLD):
 			return true
-			
+
 	return false
 
-# -------------------------------------------------------------------------------------------------
+
 func _remove_stroke(brush_position: Vector2) -> void:
 	for stroke: BrushStroke in _canvas.get_strokes_in_camera_frustrum():
-		if !_removed_strokes.has(stroke) && _stroke_intersects_circle(stroke, brush_position):
+		if not _removed_strokes.has(stroke) and _stroke_intersects_circle(stroke, brush_position):
 			_removed_strokes.append(stroke)
-		
-# ------------------------------------------------------------------------------------------------
+
+
 func _add_undoredo_action_for_erased_strokes() -> void:
 	var project: Project = ProjectManager.get_active_project()
 	if _removed_strokes.size():
@@ -70,13 +68,12 @@ func _add_undoredo_action_for_erased_strokes() -> void:
 		project.undo_redo.commit_action()
 		project.dirty = true
 
-# ------------------------------------------------------------------------------------------------
+
 func _update_bounding_boxes() -> void:
 	var strokes := _canvas.get_all_strokes()
 	_bounding_box_cache = Utils.calculte_bounding_boxes(strokes, BOUNDING_BOX_MARGIN)
-	#$"../Viewport/DebugDraw".set_bounding_boxes(_bounding_box_cache.values())
 
-# ------------------------------------------------------------------------------------------------
+
 func reset() -> void:
 	super()
 	_bounding_box_cache.clear()

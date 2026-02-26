@@ -1,16 +1,17 @@
 extends Node
 
-# -------------------------------------------------------------------------------------------------
 # Note:
-#
 # This code is taken from: https://github.com/godot-extended-libraries/godot-antialiased-line2d
-# which has been released under the MIT license
-# -------------------------------------------------------------------------------------------------
+# (with some changes) which has been released under the MIT license
 
 # Generates the antialiased Line2D texture that will be used by the various nodes.
 # We do this in a singleton to perform this generation once at load, rather than once
 # for every AntialiasedLine2D node. This generation can take several dozen milliseconds,
 # so it would cause stuttering if performed during gameplay.
+
+const WHITE = 255
+const TRANSPARENT = 0
+const AVERAGE = 128
 
 var texture: ImageTexture
 
@@ -22,30 +23,24 @@ func _ready() -> void:
 	for mipmap: int in [256, 128, 64, 32, 16, 8, 4, 2, 1]:
 		for y: int in mipmap:
 			for x: int in mipmap:
-				# White. If you need a different color for the Line2D, change the `default_color` property.
-				data.push_back(255)
+				data.push_back(WHITE)
 
 				# The last two mips are very thin. They require special handling to prevent lines
 				# from disappearing entirely.
 				if mipmap >= 4:
 					if y == 0 or y == mipmap - 1:
-						# Fully transparent.
-						data.push_back(0)
+						data.push_back(TRANSPARENT)
 					else:
-						# Fully opaque.
-						data.push_back(255)
+						data.push_back(WHITE)
 				elif mipmap == 2:
 					# Line will be a bit misaligned, but it'll look smoother than using lower alpha
 					# for both pixels.
 					if y == 1:
-						# Fully transparent.
-						data.push_back(0)
+						data.push_back(TRANSPARENT)
 					else:
-						# Fully opaque.
-						data.push_back(255)
+						data.push_back(WHITE)
 				else: # mipmap == 1
-					# Average of 0 and 255 (there is only one pixel).
-					data.push_back(128)
+					data.push_back(AVERAGE)
 
 	var image := Image.create_from_data(256, 256, true, Image.FORMAT_LA8, data)
 	texture = ImageTexture.create_from_image(image)

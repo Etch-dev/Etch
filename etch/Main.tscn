@@ -26,7 +26,7 @@ expand_margin_top = 6.0
 expand_margin_right = 6.0
 expand_margin_bottom = 6.0
 
-[node name="Main" type="Control" unique_id=1828219607]
+[node name="Main" type="Control" unique_id=1828219607 node_paths=PackedStringArray("_canvas", "_statusbar", "_topbar", "_menubar", "_toolbar", "_file_dialog", "_export_dialog", "_about_window", "_settings_window", "_settings_dialog", "_brush_color_picker", "_main_menu", "_unsaved_changes_window", "_new_palette_window", "_delete_palette_window", "_edit_palette_window")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,6 +36,22 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("8")
 script = ExtResource("1")
+_canvas = NodePath("InfiniteCanvas")
+_statusbar = NodePath("Statusbar")
+_topbar = NodePath("Topbar")
+_menubar = NodePath("Topbar/Menubar")
+_toolbar = NodePath("Topbar/Toolbar")
+_file_dialog = NodePath("FileDialog")
+_export_dialog = NodePath("ExportDialog")
+_about_window = NodePath("AboutWindow")
+_settings_window = NodePath("SettingsWindow")
+_settings_dialog = NodePath("SettingsWindow/SettingsDialog")
+_brush_color_picker = NodePath("BrushColorPicker")
+_main_menu = NodePath("MainMenu")
+_unsaved_changes_window = NodePath("UnsavedChangesWindow")
+_new_palette_window = NodePath("NewPaletteWindow")
+_delete_palette_window = NodePath("DeletePaletteWindow")
+_edit_palette_window = NodePath("EditPaletteWindow")
 
 [node name="InfiniteCanvas" parent="." unique_id=1552875483 instance=ExtResource("2")]
 layout_mode = 1
@@ -191,3 +207,39 @@ size = Vector2i(625, 175)
 theme = ExtResource("8")
 access = 2
 use_native_dialog = true
+
+[connection signal="mouse_entered" from="InfiniteCanvas" to="." method="_on_infinite_canvas_mouse_entered"]
+[connection signal="mouse_exited" from="InfiniteCanvas" to="." method="_on_infinite_canvas_mouse_exited"]
+[connection signal="create_new_project" from="Topbar/Menubar" to="." method="_on_create_new_project"]
+[connection signal="project_closed" from="Topbar/Menubar" to="." method="_on_project_closed"]
+[connection signal="project_selected" from="Topbar/Menubar" to="." method="_on_project_selected"]
+[connection signal="brush_size_changed" from="Topbar/Toolbar" to="." method="_on_brush_size_changed"]
+[connection signal="clear_canvas" from="Topbar/Toolbar" to="." method="_on_clear_canvas"]
+[connection signal="new_project" from="Topbar/Toolbar" to="." method="_on_create_new_project"]
+[connection signal="open_project" from="Topbar/Toolbar" to="." method="_on_open_project"]
+[connection signal="redo_action" from="Topbar/Toolbar" to="." method="_on_redo_action"]
+[connection signal="save_project" from="Topbar/Toolbar" to="." method="_on_save_project"]
+[connection signal="toggle_brush_color_picker" from="Topbar/Toolbar" to="." method="_on_toggle_brush_color_picker"]
+[connection signal="tool_changed" from="Topbar/Toolbar" to="." method="_on_tool_changed"]
+[connection signal="undo_action" from="Topbar/Toolbar" to="." method="_on_undo_action"]
+[connection signal="closed" from="BrushColorPicker" to="." method="_on_brush_color_picker_closed"]
+[connection signal="color_changed" from="BrushColorPicker" to="." method="_on_brush_color_picker_color_changed"]
+[connection signal="export_svg" from="MainMenu" to="." method="_export_svg"]
+[connection signal="open_about_dialog" from="MainMenu" to="." method="_on_open_about_dialog"]
+[connection signal="open_project" from="MainMenu" to="." method="_on_open_project"]
+[connection signal="open_settings_dialog" from="MainMenu" to="." method="_on_open_settings_dialog"]
+[connection signal="open_url" from="MainMenu" to="." method="_on_open_url"]
+[connection signal="quit" from="MainMenu" to="." method="_on_quit"]
+[connection signal="save_project" from="MainMenu" to="." method="_on_save_project"]
+[connection signal="save_project_as" from="MainMenu" to="." method="_on_save_project_as"]
+[connection signal="new_palette_created" from="NewPaletteWindow/NewPaletteDialog" to="." method="_on_new_palette_dialog_new_palette_created"]
+[connection signal="palette_deleted" from="DeletePaletteWindow/DeletePaletteDialog" to="." method="_on_delete_palette_dialog_palette_deleted"]
+[connection signal="palette_changed" from="EditPaletteWindow/EditPaletteDialog" to="." method="_on_edit_palette_dialog_palette_changed"]
+[connection signal="canvas_color_changed" from="SettingsWindow/SettingsDialog" to="." method="_on_canvas_color_changed"]
+[connection signal="constant_pressure_changed" from="SettingsWindow/SettingsDialog" to="." method="_on_constant_pressure_changed"]
+[connection signal="grid_pattern_changed" from="SettingsWindow/SettingsDialog" to="." method="_on_grid_pattern_changed"]
+[connection signal="grid_size_changed" from="SettingsWindow/SettingsDialog" to="." method="_on_grid_size_changed"]
+[connection signal="ui_scale_changed" from="SettingsWindow/SettingsDialog" to="." method="_on_scale_changed"]
+[connection signal="discard_changes" from="UnsavedChangesWindow/UnsavedChangesDialog" to="." method="_on_discard_unsaved_changes"]
+[connection signal="save_changes" from="UnsavedChangesWindow/UnsavedChangesDialog" to="." method="_on_save_unsaved_changes"]
+[connection signal="file_selected" from="ExportDialog" to="." method="_on_export_confirmed"]

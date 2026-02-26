@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl2x4yif2wrml"]
+[gd_scene format=3 uid="uid://bl2x4yif2wrml"]
 
-[ext_resource type="Script" path="res://UI/Dialogs/DeletePaletteDialog.gd" id="2"]
+[ext_resource type="Script" uid="uid://yhf7c6urskeg" path="res://UI/Dialogs/DeletePaletteDialog.gd" id="2"]
 
-[node name="DeletePaletteDialog" type="MarginContainer"]
+[node name="DeletePaletteDialog" type="MarginContainer" unique_id=1782306840 node_paths=PackedStringArray("_text", "_delete_button", "_cancel_button")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,17 +11,20 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 script = ExtResource("2")
+_text = NodePath("Container/Label")
+_delete_button = NodePath("Container/HBoxContainer/DeleteButton")
+_cancel_button = NodePath("Container/HBoxContainer/CancelButton")
 
-[node name="Container" type="Control" parent="."]
+[node name="Container" type="Control" parent="." unique_id=1618985700]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Container"]
+[node name="Label" type="Label" parent="Container" unique_id=79988669]
 layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 21.0
 text = "DELETE_PALETTE_DIALOG_TEXT"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=515656250]
 layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -29,12 +32,12 @@ anchor_bottom = 1.0
 offset_top = -25.0
 size_flags_vertical = 0
 
-[node name="DeleteButton" type="Button" parent="Container/HBoxContainer"]
+[node name="DeleteButton" type="Button" parent="Container/HBoxContainer" unique_id=2094827450]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "DELETE"
 
-[node name="CancelButton" type="Button" parent="Container/HBoxContainer"]
+[node name="CancelButton" type="Button" parent="Container/HBoxContainer" unique_id=1510335065]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "CANCEL"

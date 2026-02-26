@@ -1,75 +1,81 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwer12t6vfkg1"]
+[gd_scene format=3 uid="uid://bwer12t6vfkg1"]
 
 [ext_resource type="Theme" uid="uid://u5qnpgxqykiv" path="res://UI/Themes/dark/theme.tres" id="1"]
-[ext_resource type="Script" path="res://UI/Statusbar.gd" id="2"]
+[ext_resource type="Script" uid="uid://edn30djeq3db" path="res://UI/Statusbar.gd" id="2"]
 
-[node name="Statusbar" type="Panel"]
+[node name="Statusbar" type="Panel" unique_id=735881928 node_paths=PackedStringArray("_strokes_label", "_points_label", "_pressure_label", "_position_label", "_zoom_label", "_fps_label")]
 custom_minimum_size = Vector2(0, 24)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 24.0
 theme = ExtResource("1")
 script = ExtResource("2")
+_strokes_label = NodePath("MarginContainer/HBoxContainer/Right/StrokesLabel")
+_points_label = NodePath("MarginContainer/HBoxContainer/Right/PointsLabel")
+_pressure_label = NodePath("MarginContainer/HBoxContainer/Left/PressureLabel")
+_position_label = NodePath("MarginContainer/HBoxContainer/Left/PositionLabel")
+_zoom_label = NodePath("MarginContainer/HBoxContainer/Left/ZoomLabel")
+_fps_label = NodePath("MarginContainer/HBoxContainer/Left/FpsLabel")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=210476834]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=329062594]
 layout_mode = 2
 
-[node name="Left" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Left" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1549303979]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="PositionLabel" type="Label" parent="MarginContainer/HBoxContainer/Left"]
+[node name="PositionLabel" type="Label" parent="MarginContainer/HBoxContainer/Left" unique_id=835448206]
 layout_mode = 2
 text = "Position: -"
 
-[node name="Sep" type="Label" parent="MarginContainer/HBoxContainer/Left"]
+[node name="Sep" type="Label" parent="MarginContainer/HBoxContainer/Left" unique_id=1770475643]
 layout_mode = 2
 text = "|"
 
-[node name="ZoomLabel" type="Label" parent="MarginContainer/HBoxContainer/Left"]
+[node name="ZoomLabel" type="Label" parent="MarginContainer/HBoxContainer/Left" unique_id=1659877112]
 layout_mode = 2
 text = "Zoom: -"
 
-[node name="Sep2" type="Label" parent="MarginContainer/HBoxContainer/Left"]
+[node name="Sep2" type="Label" parent="MarginContainer/HBoxContainer/Left" unique_id=1431241187]
 layout_mode = 2
 text = "|"
 
-[node name="PressureLabel" type="Label" parent="MarginContainer/HBoxContainer/Left"]
+[node name="PressureLabel" type="Label" parent="MarginContainer/HBoxContainer/Left" unique_id=942126686]
 layout_mode = 2
 text = "Pressure: -"
 
-[node name="Sep3" type="Label" parent="MarginContainer/HBoxContainer/Left"]
+[node name="Sep3" type="Label" parent="MarginContainer/HBoxContainer/Left" unique_id=1686283538]
 layout_mode = 2
 text = "|"
 
-[node name="FpsLabel" type="Label" parent="MarginContainer/HBoxContainer/Left"]
+[node name="FpsLabel" type="Label" parent="MarginContainer/HBoxContainer/Left" unique_id=590591000]
 layout_mode = 2
 text = "FPS: -"
 
-[node name="Right" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Right" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=364140489]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="StrokesLabel" type="Label" parent="MarginContainer/HBoxContainer/Right"]
+[node name="StrokesLabel" type="Label" parent="MarginContainer/HBoxContainer/Right" unique_id=1097734095]
 layout_mode = 2
 text = "Strokes: 0"
 
-[node name="Sep" type="Label" parent="MarginContainer/HBoxContainer/Right"]
+[node name="Sep" type="Label" parent="MarginContainer/HBoxContainer/Right" unique_id=1038932388]
 layout_mode = 2
 text = "|"
 
-[node name="PointsLabel" type="Label" parent="MarginContainer/HBoxContainer/Right"]
+[node name="PointsLabel" type="Label" parent="MarginContainer/HBoxContainer/Right" unique_id=1492894529]
 layout_mode = 2
 text = "Points: 0"

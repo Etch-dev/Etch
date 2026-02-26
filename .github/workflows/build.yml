@@ -2,9 +2,9 @@ name: "build"
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev, main ]
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
 
 env:
   GODOT_VERSION: 4.6
@@ -19,7 +19,7 @@ jobs:
       image: docker://barichello/godot-ci:4.6
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup
         run: |
           mkdir -v -p build/${EXPORT_NAME}_${VERSION}_Windows
@@ -30,7 +30,7 @@ jobs:
           cd lorien
           godot --headless -v --export-release "Windows Desktop" ../build/${EXPORT_NAME}_${VERSION}_Windows/${EXPORT_NAME}_${VERSION}.exe
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Lorien Windows
           path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Windows
@@ -43,7 +43,7 @@ jobs:
       image: docker://barichello/godot-ci:4.6
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup
         run: |
           mkdir -v -p build/${EXPORT_NAME}_${VERSION}_Linux
@@ -54,7 +54,7 @@ jobs:
           cd lorien
           godot --headless -v --export-release "Linux" ../build/${EXPORT_NAME}_${VERSION}_Linux/${EXPORT_NAME}_${VERSION}.x86_64
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Lorien Linux
           path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Linux
@@ -67,7 +67,7 @@ jobs:
       image: docker://barichello/godot-ci:4.6
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup
         run: |
           mkdir -v -p build/${EXPORT_NAME}_${VERSION}_Mac
@@ -78,7 +78,7 @@ jobs:
           cd lorien
           godot --headless -v --export-release "macOS" ../build/${EXPORT_NAME}_${VERSION}_Mac/${EXPORT_NAME}_${VERSION}.zip
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Lorien Mac
           path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Mac

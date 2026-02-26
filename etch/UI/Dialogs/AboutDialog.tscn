@@ -6,12 +6,18 @@
 
 [sub_resource type="StyleBoxEmpty" id="1"]
 
-[node name="AboutDialog" type="PanelContainer" unique_id=772741466]
+[node name="AboutDialog" type="PanelContainer" unique_id=772741466 node_paths=PackedStringArray("_version", "_github", "_license", "_godot", "_kenny", "_remix_icons")]
 offset_right = 347.0
 offset_bottom = 180.0
 size_flags_horizontal = 4
 theme = ExtResource("1_usj82")
 script = ExtResource("2")
+_version = NodePath("VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/VersionLabel")
+_github = NodePath("VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/GithubLinkButton")
+_license = NodePath("VBoxContainer/HBoxContainer2/LicenseButton")
+_godot = NodePath("VBoxContainer/HBoxContainer3/GodotButton")
+_kenny = NodePath("VBoxContainer/HBoxContainer5/KennyButton")
+_remix_icons = NodePath("VBoxContainer/HBoxContainer4/RemixIconsButton")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=142607328]
 layout_mode = 2

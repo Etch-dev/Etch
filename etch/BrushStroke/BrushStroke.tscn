@@ -1,13 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4qnqdrb1kmv7"]
+[gd_scene format=3 uid="uid://c4qnqdrb1kmv7"]
 
-[ext_resource type="Script" path="res://BrushStroke/BrushStroke.gd" id="1"]
+[ext_resource type="Script" uid="uid://c5ndon8xa17a3" path="res://BrushStroke/BrushStroke.gd" id="1"]
 
-[node name="BrushStroke" type="Node2D"]
+[node name="BrushStroke" type="Node2D" unique_id=1577313098 node_paths=PackedStringArray("_line2d", "_visibility_notifier")]
 script = ExtResource("1")
+_line2d = NodePath("Line2D")
+_visibility_notifier = NodePath("VisibleOnScreenNotifier2D")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1366444489]
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="Line2D" type="Line2D" parent="." unique_id=464081159]
 texture_filter = 6
 texture_mode = 2
 joint_mode = 2

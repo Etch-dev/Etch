@@ -1,7 +1,6 @@
 class_name MainMenu
 extends PopupMenu
 
-# -------------------------------------------------------------------------------------------------
 signal open_about_dialog
 signal open_settings_dialog
 signal open_url(url: String)
@@ -11,21 +10,18 @@ signal save_project_as
 signal export_svg
 signal quit
 
-# -------------------------------------------------------------------------------------------------
-const ITEM_OPEN 		:= 0
-const ITEM_SAVE 		:= 1
-const ITEM_SAVE_AS 		:= 2
-const ITEM_EXPORT 		:= 3
-const ITEM_SETTINGS 	:= 4
-const ITEM_MANUAL 		:= 5
-const ITEM_BUG_TRACKER 	:= 6
-const ITEM_ABOUT 		:= 7
-const ITEM_QUIT 		:= 8
+const ITEM_OPEN = 0
+const ITEM_SAVE = 1
+const ITEM_SAVE_AS = 2
+const ITEM_EXPORT = 3
+const ITEM_SETTINGS = 4
+const ITEM_MANUAL = 5
+const ITEM_BUG_TRACKER = 6
+const ITEM_ABOUT = 7
+const ITEM_QUIT = 8
 
-# -------------------------------------------------------------------------------------------------
 @export var file_dialog_path: NodePath
 
-# -------------------------------------------------------------------------------------------------
 func _ready() -> void:
 	_set_items()
 
@@ -35,7 +31,7 @@ func _ready() -> void:
 		_set_items()
 	)
 
-# -------------------------------------------------------------------------------------------------
+
 func _set_items() -> void:
 	clear()
 
@@ -55,7 +51,7 @@ func _set_items() -> void:
 	add_item(tr("MENU_ABOUT"), ITEM_ABOUT)
 	add_item(tr("MENU_QUIT"), ITEM_QUIT, quit_action.event.get_keycode_with_modifiers())
 
-# -------------------------------------------------------------------------------------------------
+
 func _on_item_pressed(id: int) -> void:
 	match id:
 		ITEM_OPEN: _on_open_project()
@@ -68,7 +64,7 @@ func _on_item_pressed(id: int) -> void:
 		ITEM_ABOUT: open_about_dialog.emit()
 		ITEM_QUIT: quit.emit()
 
-# -------------------------------------------------------------------------------------------------
+
 func _on_open_project() -> void:
 	var file_dialog: FileDialog = get_node(file_dialog_path)
 	file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
@@ -77,11 +73,11 @@ func _on_open_project() -> void:
 	file_dialog.invalidate()
 	file_dialog.popup_centered()
 
-# -------------------------------------------------------------------------------------------------
+
 func _on_project_selected_to_open(filepath: String) -> void:
 	open_project.emit(filepath)
 
-# -------------------------------------------------------------------------------------------------
+
 func _on_file_dialog_closed() -> void:
 	var file_dialog: FileDialog = get_node(file_dialog_path)
 	Utils.remove_signal_connections(file_dialog, "file_selected")

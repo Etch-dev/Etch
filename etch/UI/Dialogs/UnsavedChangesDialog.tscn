@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct2b6hxxjlc6h"]
+[gd_scene format=3 uid="uid://ct2b6hxxjlc6h"]
 
-[ext_resource type="Script" path="res://UI/Dialogs/UnsavedChangesDialog.gd" id="1"]
+[ext_resource type="Script" uid="uid://bdqxe5qkjs2kf" path="res://UI/Dialogs/UnsavedChangesDialog.gd" id="1"]
 [ext_resource type="Theme" uid="uid://u5qnpgxqykiv" path="res://UI/Themes/dark/theme.tres" id="3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ythkr"]
 
-[node name="UnsavedChangesDialog" type="PanelContainer"]
+[node name="UnsavedChangesDialog" type="PanelContainer" unique_id=552857368 node_paths=PackedStringArray("_save_button", "_discard_button")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,33 +13,33 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3")
 script = ExtResource("1")
+_save_button = NodePath("VBoxContainer/HBoxContainer/SaveButton")
+_discard_button = NodePath("VBoxContainer/HBoxContainer/DiscardButton")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=34601725]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=843984502]
 layout_mode = 2
 text = "UNSAVED_CHANGES_DIALOG_TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=133200512]
 layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ythkr")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1613067595]
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
+[node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=724104148]
 layout_mode = 2
 text = "SAVE"
 
-[node name="DiscardButton" type="Button" parent="VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
+[node name="DiscardButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1873279417]
 layout_mode = 2
 text = "DISCARD"

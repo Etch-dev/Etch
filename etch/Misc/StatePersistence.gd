@@ -1,45 +1,42 @@
 extends Node
 
-# -------------------------------------------------------------------------------------------------
-const DEFAULT_SECTION 					:= "states"
-const WINDOW_SIZE 						:= "window_size"
-const WINDOW_MAXIMIZED 					:= "window_maximized"
-const OPEN_PROJECTS 					:= "open_projects"
-const ACTIVE_PROJECT 					:= "active_project"
+const DEFAULT_SECTION = "states"
+const WINDOW_SCREEN = "window_screen"
+const WINDOW_SIZE = "window_size"
+const WINDOW_MAXIMIZED = "window_maximized"
+const WINDOW_POS = "window_pos"
+const OPEN_PROJECTS = "open_projects"
+const ACTIVE_PROJECT = "active_project"
 
-# -------------------------------------------------------------------------------------------------
 var _config_file := ConfigFile.new()
 
-# -------------------------------------------------------------------------------------------------
 func _ready() -> void:
 	_config_file = ConfigFile.new()
 	_load_state()
 
-# -------------------------------------------------------------------------------------------------
-func _load_state() -> int:
+
+func _load_state() -> Error:
 	var err := _config_file.load(Config.STATE_PATH)
 	if err == ERR_FILE_NOT_FOUND:
 		pass
-	elif err != OK:
-		printerr("Failed to load state file")
-	
+	elif err:
+		printerr("Failed to load state file: " + error_string(err))
 	return err
 
-# -------------------------------------------------------------------------------------------------
-func _save_state() -> int:
+
+func _save_state() -> Error:
 	var err := _config_file.save(Config.STATE_PATH)
 	if err == ERR_FILE_NOT_FOUND:
 		pass
-	elif err != OK:
-		printerr("Failed to load state file")
-	
+	elif err:
+		printerr("Failed to load state file: " + error_string(err))
 	return err
 
-# -------------------------------------------------------------------------------------------------
+
 func get_value(key: String, default_value: Variant = null) -> Variant:
 	return _config_file.get_value(DEFAULT_SECTION, key, default_value)
 
-# -------------------------------------------------------------------------------------------------
+
 func set_value(key: String, value: Variant = null) -> void:
 	_config_file.set_value(DEFAULT_SECTION, key, value)
 	_save_state()

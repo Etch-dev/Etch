@@ -1,59 +1,56 @@
 class_name I18nParser
 
-# -------------------------------------------------------------------------------------------------
-const I18N_FOLDER := "res://Assets/I18n/"
+const I18N_FOLDER = "res://Assets/I18n/"
 
-# -------------------------------------------------------------------------------------------------
 var _first_load := true
 
-# -------------------------------------------------------------------------------------------------
 func reload_locales() -> ParseResult:
 	TranslationServer.clear()
 	return load_files()
 
-# -------------------------------------------------------------------------------------------------
+
 class ParseResult:
 	extends RefCounted
 
 	var locales := PackedStringArray()
 	var language_names := PackedStringArray()
-	
+
 	func append(locale: String, lang_name: String) -> void:
 		locales.append(locale)
 		language_names.append(lang_name)
 
-# -------------------------------------------------------------------------------------------------
+
 func load_files() -> ParseResult:
 	var result := ParseResult.new()
 	for f: String in _get_i18n_files():
 		var file := FileAccess.open(f, FileAccess.READ)
-		if file != null:
+		if file:
 			var position := Translation.new()
 			position.locale = f.get_file().get_basename()
-			
+
 			# Language name
 			var name := file.get_line().strip_edges()
-			if !name.begins_with("LANGUAGE_NAME"):
+			if not name.begins_with("LANGUAGE_NAME"):
 				printerr("The file must start with 'LANGUAGE_NAME' key.")
 				continue
 			name = name.trim_prefix("LANGUAGE_NAME").strip_edges()
-			
+
 			# Key value pairs
-			while !file.eof_reached():
+			while not file.eof_reached():
 				var line := file.get_line().strip_edges()
-				if line.length() == 0 || line.begins_with("#"):
+				if line.length() == 0 or line.begins_with("#"):
 					continue
-				
+
 				var split_index := line.find(" ")
 				if split_index >= 0:
 					var key := line.substr(0, split_index)
 					var value := line.substr(split_index, line.length() - 1)
-					
+
 					# Remove inline comments
 					var comment_index := value.find("#")
 					if comment_index >= 0:
 						value = value.substr(0, comment_index)
-					
+
 					value = value.strip_edges()
 					value = value.replace("\\n", "\n")
 					position.add_message(key, value)
@@ -61,40 +58,37 @@ func load_files() -> ParseResult:
 					printerr("Key not found (make sure to use spaces; not tabs): %s" % line)
 			TranslationServer.add_translation(position)
 			result.append(position.locale, name)
-			if _first_load:
-				print("Loaded i18n file: %s" % f)
 			file.close()
 	_first_load = false
 	return result
 
-# -------------------------------------------------------------------------------------------------
+
 func _i18n_filter_shortcut_list(action_name: String) -> String:
-	if ! InputMap.has_action(action_name):
+	if not InputMap.has_action(action_name):
 		printerr("_i18n_filter_shortcut_list: substituiton of invlaid action name: '%s'" % action_name)
-		return "INVALID_ACTION %s" % action_name
-	
+		return "INVALID_ACTION " + action_name
+
 	var keybindings := PackedStringArray()
 	for e: InputEvent in InputMap.action_get_events(action_name):
 		if e is InputEventKey:
 			keybindings.append(OS.get_keycode_string(e.get_keycode_with_modifiers()))
 
-	if len(keybindings) == 0:
+	if keybindings.is_empty():
 		return ""
 	else:
 		return "(%s)" % ", ".join(keybindings)
 
-# -------------------------------------------------------------------------------------------------
+
 func _get_i18n_files() -> Array[String]:
 	var files: Array[String]
 	var dir := DirAccess.open(I18N_FOLDER)
-	if dir != null:
+	if dir:
 		dir.list_dir_begin()
 		var file_name := dir.get_next()
 		while file_name != "":
-			if !dir.current_is_dir():
+			if not dir.current_is_dir():
 				files.append(I18N_FOLDER.path_join(file_name))
 			file_name = dir.get_next()
 	else:
-		printerr("Failed to list i18n files")
-	
+		printerr("Failed to list i18n files: " + error_string(DirAccess.get_open_error()))
 	return files

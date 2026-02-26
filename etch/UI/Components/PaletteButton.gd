@@ -1,59 +1,52 @@
 class_name PaletteButton
 extends Control
 
-# -------------------------------------------------------------------------------------------------
 signal pressed
 
-# -------------------------------------------------------------------------------------------------
-@onready var _color_texture: TextureRect = $Color
-@onready var _selection_texture: TextureRect = $Selection
+@export var _color_texture: TextureRect
+@export var _selection_texture: TextureRect
 
 var selected := false: set = set_selected
 var color := Color.WHITE: set = set_color
 
-# -------------------------------------------------------------------------------------------------
 func _ready() -> void:
 	_color_texture.modulate.a = 0
-	
-	gui_input.connect(_on_PaletteButton_gui_input)
-	mouse_entered.connect(_on_PaletteButton_mouse_entered)
-	mouse_exited.connect(_on_PaletteButton_mouse_exited)
 
-# -------------------------------------------------------------------------------------------------
+
 func set_selected(s: bool) -> void:
 	selected = s
 	_selection_texture.modulate = _get_selection_color() if selected else color
 
-# -------------------------------------------------------------------------------------------------
+
 func clear_hover_state() -> void:
-	if !selected:
+	if not selected:
 		_selection_texture.modulate = color
 
-# -------------------------------------------------------------------------------------------------
+
 func set_color(c: Color) -> void:
 	color = c
 	_color_texture.modulate = c
-	if !selected:
+	if not selected:
 		_selection_texture.modulate = c
 
-# -------------------------------------------------------------------------------------------------
+
 func _get_selection_color() -> Color:
 	return Color.BLACK
 
-# -------------------------------------------------------------------------------------------------
+
 func _get_hover_color() -> Color:
 	return Color.BLACK
 
-# -------------------------------------------------------------------------------------------------
-func _on_PaletteButton_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton && !event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		pressed.emit()
 
-# -------------------------------------------------------------------------------------------------
-func _on_PaletteButton_mouse_entered() -> void:
-	if !selected:
+
+func _on_mouse_entered() -> void:
+	if not selected:
 		_selection_texture.modulate = _get_hover_color()
 
-# -------------------------------------------------------------------------------------------------
-func _on_PaletteButton_mouse_exited() -> void:
+
+func _on_mouse_exited() -> void:
 	_selection_texture.modulate = _get_selection_color() if selected else color
