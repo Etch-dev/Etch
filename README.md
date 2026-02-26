@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Etch-dev/Etch/main/images/etch.png" align="left"/>
+<img src="https://raw.githubusercontent.com/Etch-dev/Etch/main/images/etch.png" align="left"  width="51.2" height="51.2"/>
 
 # Etch
 
@@ -7,7 +7,7 @@
         <img src="https://github.com/Etch-dev/Etch/workflows/build/badge.svg" alt="Build Passing" />
     </a>
     <a href="https://github.com/Etch-dev/Etch/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/Etch-dev/Etch.svg" alt="License" />
+        <img src="https://img.shields.io/badge/license-MIT-blue" alt="License" />
     </a>
 </p>
 

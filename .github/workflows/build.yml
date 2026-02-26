@@ -27,12 +27,12 @@ jobs:
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: | 
-          cd lorien
+          cd etch
           godot --headless -v --export-release "Windows Desktop" ../build/${EXPORT_NAME}_${VERSION}_Windows/${EXPORT_NAME}_${VERSION}.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
-          name: Lorien Windows
+          name: Etch Windows
           path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Windows
           retention-days: 14
 
@@ -51,12 +51,12 @@ jobs:
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: | 
-          cd lorien
+          cd etch
           godot --headless -v --export-release "Linux" ../build/${EXPORT_NAME}_${VERSION}_Linux/${EXPORT_NAME}_${VERSION}.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
-          name: Lorien Linux
+          name: Etch Linux
           path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Linux
           retention-days: 14
 
@@ -75,11 +75,11 @@ jobs:
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: | 
-          cd lorien
+          cd etch
           godot --headless -v --export-release "macOS" ../build/${EXPORT_NAME}_${VERSION}_Mac/${EXPORT_NAME}_${VERSION}.zip
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
         with:
-          name: Lorien Mac
+          name: Etch Mac
           path: build/${{ env.EXPORT_NAME }}_${{ env.VERSION }}_Mac
           retention-days: 14
