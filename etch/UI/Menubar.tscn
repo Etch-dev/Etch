@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://u5qnpgxqykiv" path="res://UI/Themes/dark/theme.tres" id="1"]
 [ext_resource type="Script" uid="uid://cxer24l5pnlka" path="res://UI/Menubar.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://r233fnxk5qkf" path="res://Assets/Icons/menu.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://mi3sj82rl20v" path="res://Assets/Icons/menu.png" id="3"]
 [ext_resource type="Script" uid="uid://d2myv6ss15j1b" path="res://UI/Components/FlatTextureButton.gd" id="4"]
-[ext_resource type="Texture2D" uid="uid://bbdkcvds2nxg7" path="res://Assets/Icons/add.png" id="5_4fxbm"]
+[ext_resource type="Texture2D" uid="uid://ccyelvo3unwnf" path="res://Assets/Icons/add.png" id="5_4fxbm"]
 
 [sub_resource type="StyleBoxEmpty" id="1"]
 

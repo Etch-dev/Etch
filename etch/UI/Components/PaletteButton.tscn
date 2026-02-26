@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bu5avn6ltdgu1"]
 
-[ext_resource type="Texture2D" uid="uid://d2x4s44tq3fd3" path="res://Assets/Textures/palette_button_outline.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://bb2kaiahpvl5m" path="res://Assets/Textures/palette_button.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://6cunsrxl7wbd" path="res://Assets/Textures/palette_button_outline.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://di5wga2wp40u8" path="res://Assets/Textures/palette_button.png" id="2"]
 [ext_resource type="Script" uid="uid://bce860vn35j8i" path="res://UI/Components/PaletteButton.gd" id="3"]
 
 [node name="PaletteButton" type="Control" unique_id=16028549 node_paths=PackedStringArray("_color_texture", "_selection_texture")]

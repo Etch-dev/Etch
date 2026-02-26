@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://u5qnpgxqykiv" path="res://UI/Themes/dark/theme.tres" id="1"]
 [ext_resource type="Script" uid="uid://c8v72t8mvpgsq" path="res://UI/ColorPalettePicker.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://bu10tixbxmwus" path="res://Assets/Icons/edit.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://bmutnbt040e0b" path="res://Assets/Icons/plus.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://ci340bpx1hg78" path="res://Assets/Icons/copy.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://c3maqrdnsjgiq" path="res://Assets/Icons/delete.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://ythmaa28xhfu" path="res://Assets/Icons/edit.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bk3y7p3lw12c6" path="res://Assets/Icons/plus.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dr2seirfl5vs0" path="res://Assets/Icons/copy.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dj1wtfng0xcmw" path="res://Assets/Icons/delete.png" id="6"]
 [ext_resource type="Script" uid="uid://d2myv6ss15j1b" path="res://UI/Components/FlatTextureButton.gd" id="7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eth5b"]

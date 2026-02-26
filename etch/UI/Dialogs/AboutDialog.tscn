@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://u5qnpgxqykiv" path="res://UI/Themes/dark/theme.tres" id="1_usj82"]
 [ext_resource type="Script" uid="uid://ck4kqcex87t31" path="res://UI/Dialogs/AboutDialog.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://cuj72g8i5gc0f" path="res://Assets/icon.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://5a3lyuurlxsr" path="res://Assets/icon.png" id="3"]
 
 [sub_resource type="StyleBoxEmpty" id="1"]
 
